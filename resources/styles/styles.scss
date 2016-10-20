@@ -1,0 +1,81 @@
+$dark: #29110e; //super dark brown
+$heavy: #573C13; // mdeium brown
+$light: #B2956A; // light gold
+$normal: #8D7249; // gold
+
+$red: 0;
+$green: 0;
+$blue: 0;
+$full: 255;
+$alphaHigh: .75;
+$alphaLow: .25;
+$background: rgba($full, $full, $full, $alphaHigh);
+$bigShadow: rgba($red, $green, $blue, $alphaHigh);
+$smallShadow: rgba($red, $green, $blue, $alphaLow);
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: beige url("./../images/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1 {
+  color: $dark;
+  font-family: 'Ruslan Display', cursive;
+  text-align: center;
+  text-shadow: 2px 3px 10px $bigShadow;
+  font-size: 5em;
+  line-height: 2;
+}
+
+h3 {
+  color: $normal;
+  font-family: 'Ruslan Display', cursive;
+  font-size: 2.5em;
+  text-shadow: 1px 2px 5px $smallShadow;
+}
+
+img {
+  float: left;
+  width: 94px;
+  margin-right: 10px;
+}
+
+.container {
+  background: $background;
+  padding: 25px;
+  border-radius: 5px;
+  margin-top: 50px;
+  box-shadow: 2px 3px 10px $bigShadow;
+}
+
+.heavy {
+  color: $heavy;
+}
+
+.light {
+  color: $light;
+}
+
+.filter {
+  font-size: 1.2em;
+}
+
+.btn {
+  background-color: $normal;
+  color: $background;
+}
+
+.btn:hover {
+  background-color: $light;
+  color: $background;
+}
+
+.btn:active {
+  background-color: $dark;
+  color: $background;
+}
