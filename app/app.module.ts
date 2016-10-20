@@ -2,9 +2,9 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
-import { ListKegComponent } from './keg-list.component';
-import { EditKegComponent } from './keg-edit.component';
-import { AddKegComponent } from './keg-add.component';
+import { ListPlaceComponent } from './place-list.component';
+import { EditPlaceComponent } from './place-edit.component';
+import { AddPlaceComponent } from './place-add.component';
 import { EmptinessPipe } from './emptiness.pipe';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { EmptinessPipe } from './emptiness.pipe';
   ],
   declarations: [
     AppComponent,
-    ListKegComponent,
-    EditKegComponent,
-    AddKegComponent,
+    ListPlaceComponent,
+    EditPlaceComponent,
+    AddPlaceComponent,
     EmptinessPipe,
    ],
   bootstrap:    [ AppComponent ]

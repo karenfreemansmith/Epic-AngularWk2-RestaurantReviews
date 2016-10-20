@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
-import { Keg } from './keg.model';
+import { Place } from './place.model';
 
 @Component({
   selector: 'my-app',
   template: `
   <div class="container">
-    <h1>Chipped Flagon Tavern</h1>
+    <h1>Restaurant Reviews</h1>
     <div class="row">
       <div class="col-sm-8">
-        <list-kegs
-          [childKegList] = "masterKegList"
-          (clickedKeg)="showDetails($event)"
-        ></list-kegs>
+        <list-Places
+          [childPlaceList] = "masterKegList"
+          (clickedPlace)="showDetails($event)"
+        ></list-places>
       </div>
       <div class="col-sm-4">
-        <add-keg
-          [childSelectedKeg]="selectedKeg"
-          (newKegSender) = "addKeg($event)"
-        ></add-keg>
-        <edit-keg
-          [childSelectedKeg]="selectedKeg"
-          (newKegEditor)="finishedUpdate()"
-        ></edit-keg>
+        <add-place
+          [childSelectedPlace]="selectedPlace"
+          (newPlaceSender) = "addKeg($event)"
+        ></add-place>
+        <edit-place
+          [childSelectedPlace]="selectedPlace"
+          (newPlaceEditor)="finishedUpdate()"
+        ></edit-place>
       </div>
     </div>
   </div>
@@ -29,21 +29,21 @@ import { Keg } from './keg.model';
 })
 
 export class AppComponent {
-  public masterKegList: Keg[] = [
-    new Keg("Belgian Strong Dark", "Pfriem", 5.95, .1),
-    new Keg("La Fin Du Monde", "Unibroue", 7.50, .09),
-    new Keg("Summer Lovin'", "Everybody's Brewing", 4, .048),
-    new Keg("Bigfoot: Barleywine", "Sierra Navada", 7.25, .096),
-    new Keg("Pabst Blue Ribbon", "Pabst Brewing Co.", .95, .0474)
+  public masterPlaceList: Place[] = [
+    new Place("Belgian Strong Dark", "Pfriem", 5.95, .1),
+    new Place("La Fin Du Monde", "Unibroue", 7.50, .09),
+    new Place("Summer Lovin'", "Everybody's Brewing", 4, .048),
+    new Place("Bigfoot: Barleywine", "Sierra Navada", 7.25, .096),
+    new Place("Pabst Blue Ribbon", "Pabst Brewing Co.", .95, .0474)
   ];
-  addKeg(newKegFromChild: Keg) {
+  addKeg(newPlaceFromChild: Keg) {
     this.masterKegList.push(newKegFromChild);
   }
-  selectedKeg: Keg = null;
-  showDetails(clickedKeg: Keg) {
-    this.selectedKeg = clickedKeg;
+  selectedPlace: Place = null;
+  showDetails(clickedPlace: Place) {
+    this.selectedPlace = clickedPlace;
   }
   finishedUpdate() {
-    this.selectedKeg = null;
+    this.selectedPlace = null;
   }
 }

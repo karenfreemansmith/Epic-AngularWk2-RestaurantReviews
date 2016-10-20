@@ -1,17 +1,17 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Place } from './place.model';
 
 @Component ({
-  selector:"add-keg",
+  selector:"add-place",
   template:`
-  <div *ngIf="childSelectedKeg===null">
-    <h3>New Keg:</h3>
+  <div *ngIf="childSelectedPlace===null">
+    <h3>New Place:</h3>
     <div class="form-group">
-      <label>Enter Keg Name: </label>
+      <label>Enter Place Name: </label>
       <input #newName class="form-control">
     </div>
     <div class="form-group">
-      <label>Enter Keg Brand: </label>
+      <label>Enter Place Brand: </label>
       <input #newBrand class="form-control">
     </div>
     <div class="form-group">
@@ -19,7 +19,7 @@ import { Keg } from './keg.model';
       <input #newPrice class="form-control">
     </div>
     <div class="form-group">
-      <label>Enter Keg ABV: </label>
+      <label>Enter Place ABV: </label>
       <input #newABV class="form-control">
     </div>
     <button (click)="
@@ -28,18 +28,18 @@ import { Keg } from './keg.model';
       newBrand.value='';
       newPrice.value='';
       newABV.value='';
-    " class="btn form-control">Add Keg</button>
+    " class="btn form-control">Add Place</button>
   </div>
   `
 })
 
-export class AddKegComponent {
-  @Input() childSelectedKeg: Keg;
-  @Output() newKegSender = new EventEmitter();
+export class AddPlaceComponent {
+  @Input() childSelectedPlace: Place;
+  @Output() newPlaceSender = new EventEmitter();
   addClicked(name: string, brand: string, price: number, abv: number){
     if((name!=='')&&(brand!=='')&&(price>0)&&(abv>0)) {
-      var newKegToAdd: Keg = new Keg(name, brand, price, abv);
-      this.newKegSender.emit(newKegToAdd);
+      var newPlaceToAdd: Place = new Place(name, brand, price, abv);
+      this.newPlaceSender.emit(newPlaceToAdd);
     } else {
       alert("You need to fill in all blanks to tap a keg, sober up and try again!");
     }
